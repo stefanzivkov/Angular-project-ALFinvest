@@ -1,0 +1,59 @@
+<section class="section-cta" id="cta">
+  <div class="container">
+    <div class="cta">
+      <div class="cta-text-box">
+        <h2 class="heading-secondary">Dodavanje stana</h2>
+
+        <form
+          class="cta-form"
+          name="sign-up"
+          netlify
+          (ngSubmit)="dodajProdaju(prodajaForm)"
+          #prodajaForm="ngForm"
+        >
+          <div>
+            <label for="ime">Stan</label>
+            <mat-form-field appearance="fill">
+              <mat-label>Stan</mat-label>
+              <mat-select ngModel name="idStan">
+                <mat-option *ngFor="let stan of stanovi" [value]="stan.idStan">
+                  {{ stan.broj }}/{{ stan.sprat }}/{{ stan.cena }}€/{{
+                    stan.kvadratura
+                  }}m2
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <label for="ime">Kupac</label>
+            <mat-form-field appearance="fill">
+              <mat-label>Kupac</mat-label>
+              <mat-select ngModel name="idKorisnik">
+                <mat-option
+                  *ngFor="let kupac of kupci"
+                  [value]="kupac.idKorisnik"
+                >
+                  {{ kupac.ime }} {{ kupac.prezime }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <label for="username">Datum</label>
+            <input
+              id="username"
+              type="date"
+              required
+              ngModel
+              name="datum"
+              #datum="ngModel"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn--form">Dodaj</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

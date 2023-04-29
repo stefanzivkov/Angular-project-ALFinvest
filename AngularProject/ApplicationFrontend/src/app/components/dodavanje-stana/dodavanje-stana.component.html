@@ -1,0 +1,88 @@
+<section class="section-cta" id="cta">
+  <div class="container">
+    <div class="cta">
+      <div class="cta-text-box">
+        <h2 class="heading-secondary">Dodavanje stana</h2>
+
+        <form
+          class="cta-form"
+          name="sign-up"
+          netlify
+          (ngSubmit)="dodajStan(stanForm)"
+          #stanForm="ngForm"
+        >
+          <div>
+            <label for="ime">Zgrada</label>
+            <mat-form-field appearance="fill">
+              <mat-label>Zgrada</mat-label>
+              <mat-select ngModel name="idZgrada">
+                <mat-option
+                  *ngFor="let zgrada of zgrade"
+                  [value]="zgrada.idZgrada"
+                >
+                  {{ zgrada.adresa }},{{ zgrada.grad }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <label for="username">Cena</label>
+            <input
+              id="username"
+              type="number"
+              required
+              ngModel
+              name="cena"
+              #cena="ngModel"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="username">Sprat</label>
+            <input
+              id="username"
+              type="number"
+              required
+              ngModel
+              name="sprat"
+              #cena="ngModel"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password">Kvadratura</label>
+            <input
+              id="password"
+              type="number"
+              required
+              ngModel
+              name="kvadratura"
+              #kvadratura="ngModel"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Broj</label>
+            <input
+              id="email"
+              type="number"
+              required
+              ngModel
+              name="broj"
+              #broj="ngModel"
+              required
+            />
+          </div>
+          <div>
+            <label>Opis</label>
+            <textarea name="opis" ngModel id="" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--form">Dodaj</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

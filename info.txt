@@ -1,0 +1,11 @@
+korisnik:
+username - bogdan
+password - 123
+
+agent:
+username - vasa	
+password - 123
+
+admin:
+username - mika	
+password - mika123

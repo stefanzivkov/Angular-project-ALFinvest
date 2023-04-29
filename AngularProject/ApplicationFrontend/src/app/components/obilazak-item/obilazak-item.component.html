@@ -1,0 +1,46 @@
+<div class="meal">
+  <img
+    src="../../../assets/obilazak.jpg"
+    class="meal-img"
+    alt="Japanese Gyozas"
+  />
+  <div
+    [class]="
+      obilazak.potvrdaObilaska == 0
+        ? 'nezakazan meal-content'
+        : 'zakazan meal-content'
+    "
+  >
+    <ul class="meal-attributes">
+      <li class="meal-attribute">
+        <span
+          >Datum: <strong>{{ obilazak.datum }}</strong></span
+        >
+      </li>
+      <li class="meal-attribute">
+        <span
+          >Vreme: <strong>{{ obilazak.vreme }}</strong></span
+        >
+      </li>
+      <li class="meal-attribute">
+        <span
+          >Adresa: <strong>{{ zgrada.adresa }}</strong></span
+        >
+      </li>
+      <li class="meal-attribute">
+        <span
+          >Grad: <strong>{{ zgrada.grad }}</strong></span
+        >
+      </li>
+    </ul>
+    <br />
+    <button
+      type="submit"
+      (click)="potvrdiObilazak()"
+      class="btn--form"
+      *ngIf="proveriUlogovanost()"
+    >
+      Potvrdi
+    </button>
+  </div>
+</div>

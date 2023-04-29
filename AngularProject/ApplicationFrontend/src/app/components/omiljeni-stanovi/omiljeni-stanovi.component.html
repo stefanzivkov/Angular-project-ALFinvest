@@ -1,0 +1,11 @@
+<section class="section-meals" id="meals">
+  <div class="container grid grid--3-cols margin-bottom-md">
+    <app-stan-item
+      [stan]="stan"
+      *ngFor="let stan of omiljeniStanovi"
+    ></app-stan-item>
+  </div>
+  <div class="message" *ngIf="velicinaNiza == 0">
+    <p>Nemate jos uvek nijedan stan dodat u omiljene.</p>
+  </div>
+</section>

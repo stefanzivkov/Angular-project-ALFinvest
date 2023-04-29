@@ -1,0 +1,180 @@
+<nav class="navbar navbar-expand-lg bg-ligth">
+  <div class="tmp">
+    <img src="../assets/logo1.png" type="image/png" classs="logo" />
+  </div>
+  <div class="tmp1">
+    <div class="btn-group">
+      <button routerLinkActive="active" routerLink="/pocetna" class="btn">
+        Projekti
+      </button>
+      <button routerLinkActive="active" routerLink="/stanovi" class="btn">
+        Stanovi
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/omiljeniStanovi"
+        class="btn"
+        *ngIf="kupacUlogovanost()"
+      >
+        Omiljeni stanovi
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/obilasci"
+        class="btn"
+        *ngIf="kupacUlogovanost()"
+      >
+        Obilasci
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/obilasciAgenta/{{ idKorisnika }}"
+        class="btn"
+        *ngIf="agentUlogovanost()"
+      >
+        Obilasci
+      </button>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        class="btn"
+        aria-label="Example icon-button with a menu"
+        *ngIf="agentUlogovanost()"
+      >
+        Dodaj
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <a routerLink="/dodajStan"><span>Stan</span></a>
+        </button>
+        <button mat-menu-item>
+          <a routerLink="/dodajZgradu"><span>Zgradu</span></a>
+        </button>
+        <button mat-menu-item>
+          <a routerLink="/dodajProdaju"><span>Prodaju</span></a>
+        </button>
+      </mat-menu>
+      <button
+        routerLinkActive="active"
+        routerLink="/agenti"
+        class="btn"
+        *ngIf="adminUlogovanost()"
+      >
+        Agenti
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/dodajAgenta"
+        class="btn"
+        *ngIf="adminUlogovanost()"
+      >
+        Dodaj agenta
+      </button>
+      <button routerLinkActive="active" routerLink="/informacije" class="btn">
+        O nama
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/login"
+        *ngIf="proveriUlogovanost()"
+        class="btn"
+      >
+        Login
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/registracija"
+        *ngIf="proveriUlogovanost()"
+        class="btn"
+      >
+        Registracija
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/pocetna"
+        (click)="logout()"
+        class="btn"
+        *ngIf="proveriUlogovanost1()"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="footer" id="kontakt">
+  <div class="container grid grid--footer">
+    <div class="logo-col">
+      <a href="#" class="footer-logo">
+        <img class="logo1" alt="Omnifood logo" src="../assets/logo1.png" />
+      </a>
+      <p class="copyright">
+        Copyright &copy; <span class="year">2022</span> by ALF invest, Inc. All
+        rights reserved.
+      </p>
+    </div>
+    <div class="address-col">
+      <p class="footer-heading">Kontakt podaci</p>
+      <address class="contacts">
+        <p class="address">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+            /></svg
+          >Omladinska 54 | Novi Sad, Srbija
+        </p>
+        <p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+            />
+          </svg>
+          <a class="footer-link" href="tel:+381 62 458611">+381 62 458611</a
+          ><br /><br />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+          <a class="footer-link" href="mailto:alfinvest@gmail.com"
+            >alfinvest@gmail.com</a
+          >
+        </p>
+      </address>
+    </div>
+  </div>
+</footer>

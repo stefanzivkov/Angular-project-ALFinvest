@@ -1,0 +1,57 @@
+<section class="section-cta" id="cta">
+  <div class="container">
+    <div class="cta">
+      <div class="cta-text-box">
+        <h2 class="heading-secondary">Dodavanje stana</h2>
+
+        <form
+          class="cta-form"
+          name="sign-up"
+          netlify
+          (ngSubmit)="dodajZgradu(zgradaForm)"
+          #zgradaForm="ngForm"
+        >
+          <div>
+            <label for="username">Adresa</label>
+            <input
+              id="username"
+              type="text"
+              required
+              ngModel
+              name="adresa"
+              #cena="ngModel"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="username">Grad</label>
+            <input
+              id="username"
+              type="text"
+              required
+              ngModel
+              name="grad"
+              #grad="ngModel"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password">Godina izgradnje</label>
+            <input
+              id="password"
+              type="number"
+              required
+              ngModel
+              name="godina"
+              #kvadratura="ngModel"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn--form">Dodaj</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

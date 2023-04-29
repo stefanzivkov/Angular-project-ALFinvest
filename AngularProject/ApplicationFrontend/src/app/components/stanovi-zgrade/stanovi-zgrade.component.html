@@ -1,0 +1,8 @@
+<section class="section-meals" id="meals">
+  <div class="container grid grid--3-cols margin-bottom-md">
+    <app-stan-item [stan]="stan" *ngFor="let stan of stanovi"></app-stan-item>
+  </div>
+  <div class="message" *ngIf="velicinaNiza == 0">
+    <p>Svi stanovi zgrade su prodati ili jos uvek nisu uneti!</p>
+  </div>
+</section>

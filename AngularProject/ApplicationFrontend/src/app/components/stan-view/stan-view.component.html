@@ -1,0 +1,94 @@
+<section class="section-cta" id="cta">
+  <div class="container">
+    <div class="cta">
+      <h2 class="heading-secondary">Informacije o stanu</h2>
+      <div class="cta-text-box">
+        <div>
+          <p>Adresa:</p>
+          <strong
+            ><p>{{ zgrada.adresa }} / {{ stan.broj }}</p></strong
+          >
+        </div>
+
+        <div>
+          <p>Kvadratura:</p>
+          <strong
+            ><p>{{ stan.kvadratura }} m2</p></strong
+          >
+        </div>
+        <div>
+          <p>Sprat:</p>
+          <strong
+            ><p>{{ stan.sprat }}</p></strong
+          >
+        </div>
+
+        <div>
+          <p>Cena:</p>
+          <strong
+            ><p>{{ stan.cena }} €</p></strong
+          >
+        </div>
+
+        <div>
+          <p>Opis:</p>
+          <strong
+            ><p>{{ stan.opis }}</p></strong
+          >
+        </div>
+        <div>
+          <p>Grad:</p>
+          <strong
+            ><p>{{ zgrada.grad }}</p></strong
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn--form"
+          *ngIf="proveriUlogovanost()"
+          routerLink="/zakazivanjeObilaska/{{ stan.idStan }}"
+        >
+          Zakazi obilazak
+        </button>
+        <a *ngIf="proveriUlogovanost()" href="" (click)="dodajUOmiljene()"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+            /></svg
+        ></a>
+        <button
+          type="submit"
+          class="btn btn--form"
+          *ngIf="proveriUlogovanostAgent()"
+          routerLink="/azuriranjeStana/{{ stan.idStan }}"
+        >
+          Azuriraj stan
+        </button>
+      </div>
+      <h2 class="heading-secondary">Komentari:</h2>
+      <div *ngIf="proveriUlogovanost()">
+        <form #komentarForm="ngForm" (ngSubmit)="dodajKomentar(komentarForm)">
+          <textarea ngModel name="komentar"></textarea>
+          <br />
+          <button type="submit" class="btn btn--komentar">Sacuvaj</button>
+        </form>
+      </div>
+      <div *ngIf="komentari != undefined">
+        <app-komentar
+          [komentar]="komentar"
+          *ngFor="let komentar of komentari"
+        ></app-komentar>
+      </div>
+    </div>
+  </div>
+</section>

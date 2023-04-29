@@ -1,0 +1,54 @@
+<section class="section-cta" id="cta">
+  <div class="container">
+    <div class="cta">
+      <div class="cta-text-box">
+        <h2 class="heading-secondary">Zakazivanje obilaska</h2>
+
+        <form
+          class="cta-form"
+          name="sign-up"
+          netlify
+          (ngSubmit)="zakazivanjeObilaska(obilazakForm)"
+          #obilazakForm="ngForm"
+        >
+          <div>
+            <label for="ime">Datum</label>
+            <input
+              id="datum"
+              type="date"
+              required
+              ngModel
+              name="datum"
+              #datum="ngModel"
+            />
+          </div>
+
+          <div>
+            <label for="prezime">Vreme</label>
+            <input
+              id="vreme"
+              type="text"
+              required
+              ngModel
+              name="vreme"
+              #vreme="ngModel"
+            />
+          </div>
+          <div>
+            <label for="username">Napomena</label>
+            <textarea
+              id="napomena"
+              type="text"
+              required
+              ngModel
+              name="napomena"
+              #napomena="ngModel"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--form">Zakazi</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

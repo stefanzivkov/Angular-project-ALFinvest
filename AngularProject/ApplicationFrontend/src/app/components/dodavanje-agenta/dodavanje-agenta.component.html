@@ -1,0 +1,78 @@
+<section class="section-cta" id="cta">
+  <div class="container">
+    <div class="cta">
+      <div class="cta-text-box">
+        <h2 class="heading-secondary">Dodavanje agenta</h2>
+
+        <form
+          class="cta-form"
+          name="sign-up"
+          netlify
+          (ngSubmit)="dodajAgenta(agentForm)"
+          #agentForm="ngForm"
+        >
+          <div>
+            <label for="ime">Ime</label>
+            <input
+              id="ime"
+              type="text"
+              required
+              ngModel
+              name="ime"
+              #ime="ngModel"
+            />
+          </div>
+
+          <div>
+            <label for="prezime">Prezime</label>
+            <input
+              id="prezime"
+              type="text"
+              required
+              ngModel
+              name="prezime"
+              #prezime="ngModel"
+            />
+          </div>
+          <div>
+            <label for="username">Username</label>
+            <input
+              id="username"
+              type="text"
+              required
+              ngModel
+              name="username"
+              #username="ngModel"
+            />
+          </div>
+
+          <div>
+            <label for="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              required
+              ngModel
+              name="password"
+              #password="ngModel"
+            />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              required
+              ngModel
+              name="email"
+              #email="ngModel"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            />
+          </div>
+          <button type="submit" class="btn btn--form">Dodaj</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

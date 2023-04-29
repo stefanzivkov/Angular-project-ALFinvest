@@ -1,0 +1,36 @@
+<div
+  class="meal"
+  matBadge="{{ brojProdaja }}"
+  matBadgeSize="large"
+  matBadgePosition="after"
+  matBadgeColor="warn"
+>
+  <img src="../../../assets/agent.png" class="meal-img" alt="Japanese Gyozas" />
+  <div class="meal-content">
+    <ul class="meal-attributes">
+      <li class="meal-attribute">
+        <span
+          >Ime: <strong>{{ agent.ime }}</strong></span
+        >
+      </li>
+      <li class="meal-attribute">
+        <span
+          >Prezime: <strong>{{ agent.prezime }}</strong></span
+        >
+      </li>
+      <li class="meal-attribute">
+        <span
+          >Email: <strong>{{ agent.email }}</strong></span
+        >
+      </li>
+    </ul>
+    <br />
+    <button
+      type="submit"
+      class="btn btn--form"
+      routerLink="/obilasciAgenta/{{ agent.idKorisnik }}"
+    >
+      Obilasci
+    </button>
+  </div>
+</div>
